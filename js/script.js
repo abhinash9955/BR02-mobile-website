@@ -12,7 +12,7 @@ const formatToINR = (price) => {
    1. SAMPLE PRODUCT DATA (24 items)
    ========================================= */
 const productsData = [
-    { id: 1,  brand: 'Samsung',  name: 'Galaxy S23 Ultra',  price: 95000, ram: '12GB', storage: '256GB', condition: 'Like New',   battery: '95%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=600&auto=format&fit=crop' },
+    { id: 1,  brand: 'Samsung',  name: 'Xr Convert 17Pro',  price: 20000, ram: '12GB', storage: '128GB', condition: 'Like New',   battery: '95%', youtubeLink: 'https://youtube.com/shorts/uVBkLY_-9qM?si=IajYx_B9X3dxBc1o', image: 'assets/images/product_img/product1.jpg',},
     { id: 2,  brand: 'Apple',    name: 'iPhone 13 Pro',     price: 72000, ram: '6GB',  storage: '128GB', condition: 'Excellent',  battery: '89%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?q=80&w=600&auto=format&fit=crop' },
     { id: 3,  brand: 'Redmi',    name: 'Note 12 Pro',       price: 21000, ram: '8GB',  storage: '256GB', condition: 'Good',       battery: '92%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1598327105654-36eefaca32ea?q=80&w=600&auto=format&fit=crop' },
     { id: 4,  brand: 'Realme',   name: 'Narzo 50',          price: 15000, ram: '4GB',  storage: '64GB',  condition: 'Fair',       battery: '85%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbc0?q=80&w=600&auto=format&fit=crop' },
