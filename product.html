@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BR02 | Product Details</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navbar Section -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">BR02</a>
+            
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search mobiles...">
+                <i class="fas fa-search"></i>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#products-section">Products</a></li>
+                <li class="mobile-only"><a href="https://wa.me/91XXXXXXXXXX" target="_blank">Contact</a></li>
+                <li class="mobile-only" id="mobile-wishlist-trigger"><a href="#" class="nav-icon"><i class="fas fa-heart"></i> Wishlist</a></li>
+            </ul>
+            
+            <div class="nav-actions desktop-only">
+                <!-- Wishlist Icon -->
+                <div class="nav-icon" id="wishlist-btn" title="Wishlist">
+                    <i class="fas fa-heart"></i>
+                    <span class="wishlist-count" id="wishlist-count">0</span>
+                </div>
+                
+                <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="btn-primary">
+                    <i class="fab fa-whatsapp"></i> Contact Us
+                </a>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Details Container -->
+    <main class="product-details-container fade-in">
+        <a href="index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Products
+        </a>
+        
+        <div id="product-detail-view">
+            <!-- Content will be injected by JavaScript based on URL ID param -->
+            <div style="text-align: center; padding: 50px;">
+                <p>Loading Product...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Wishlist Modal -->
+    <div class="modal-overlay" id="wishlist-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Your Wishlist</h3>
+                <button class="modal-close" id="close-wishlist"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body" id="wishlist-body">
+                <!-- Wishlist items injected here -->
+                <p style="text-align:center; color: var(--text-light); padding: 20px;">Your wishlist is empty.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer fade-in">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3>BR02</h3>
+                <p>Your trusted destination for premium pre-owned smartphones.</p>
+            </div>
+            
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#products-section">Products</a></li>
+                    </ul>
+                </div>
+                
+                <div class="link-group">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +91 XXXXXXXXXX</li>
+                        <li><i class="fas fa-envelope"></i> info@br02.com</li>
+                    </ul>
+                </div>
+                
+                <div class="link-group">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="ig"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="fb"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/91XXXXXXXXXX" class="wa"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year"></span> BR02 Mobiles.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Icon -->
+    <a href="https://wa.me/91XXXXXXXXXX" class="floating-wa pulse-glow" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Custom Script -->
+    <script src="js/script.js"></script>
+</body>
+</html>
