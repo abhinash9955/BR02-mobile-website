@@ -11,13 +11,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/logo.jpeg" type="image/png">
 </head>
 <body>
 
     <!-- 1. Navbar Section -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo">BR02</a>
+            <a href="index.html" class="logo-wrapper" id="logo-wrapper">
+                <!-- Version 1: Image logo -->
+                <div class="logo-view" id="logo-image-view">
+                    <img src="assets/images/logo.jpeg" alt="BR02 Logo" class="logo-img">
+                </div>
+                <!-- Version 2: Text logo -->
+                <div class="logo-view logo-text-view" id="logo-text-view">
+                    <span class="logo-brand">BR02</span>
+                    <span class="logo-trade">TRADE</span>
+                </div>
+            </a>
             
             <!-- Search Bar -->
             <div class="search-container">
@@ -28,7 +40,7 @@
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="#products-section">Products</a></li>
-                <li class="mobile-only"><a href="https://wa.me/91XXXXXXXXXX" target="_blank">Contact</a></li>
+                <li class="mobile-only"><a href="https://wa.me/918544616321" target="_blank">Contact</a></li>
                 <li class="mobile-only" id="mobile-wishlist-trigger"><a href="#" class="nav-icon"><i class="fas fa-heart"></i> Wishlist</a></li>
             </ul>
             
@@ -38,8 +50,13 @@
                     <i class="fas fa-heart"></i>
                     <span class="wishlist-count" id="wishlist-count">0</span>
                 </div>
+
+                <!-- Instagram Icon -->
+                <a href="https://instagram.com/br02mobiles" target="_blank" class="nav-icon" title="Instagram" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
                 
-                <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="btn-primary">
+                <a href="https://wa.me/918544616321" target="_blank" class="btn-primary">
                     <i class="fab fa-whatsapp"></i> Contact Us
                 </a>
             </div>
@@ -60,6 +77,58 @@
             <div class="carousel-dots" id="carousel-dots"></div>
         </div>
     </header>
+
+    <!-- Brand Filter Section -->
+    <section class="brand-filter-section" id="brand-filter-section">
+        <div class="container">
+            <div class="brand-slider-wrapper">
+                <button class="slider-arrow left-arrow" id="brand-scroll-left"><i class="fas fa-chevron-left"></i></button>
+                <div class="brand-list" id="brand-list">
+                    <div class="brand-item active" data-filter="All">
+                        <div class="brand-circle"><i class="fas fa-layer-group"></i></div>
+                        <span>All</span>
+                    </div>
+                    <div class="brand-item" data-filter="Apple">
+                        <div class="brand-circle"><img src="assets/images/brands/apple.png" alt="Apple"></div>
+                        <span>Apple</span>
+                    </div>
+                    <div class="brand-item" data-filter="Samsung">
+                        <div class="brand-circle"><img src="assets/images/brands/samsung.png" alt="Samsung"></div>
+                        <span>Samsung</span>
+                    </div>
+                    <div class="brand-item" data-filter="OnePlus">
+                        <div class="brand-circle"><img src="assets/images/brands/oneplus.png" alt="OnePlus"></div>
+                        <span>OnePlus</span>
+                    </div>
+                    <div class="brand-item" data-filter="Vivo">
+                        <div class="brand-circle"><img src="assets/images/brands/vivo.png" alt="Vivo"></div>
+                        <span>Vivo</span>
+                    </div>
+                    <div class="brand-item" data-filter="Oppo">
+                        <div class="brand-circle"><img src="assets/images/brands/oppo.png" alt="Oppo"></div>
+                        <span>Oppo</span>
+                    </div>
+                    <div class="brand-item" data-filter="Realme">
+                        <div class="brand-circle"><img src="assets/images/brands/realme.png" alt="Realme"></div>
+                        <span>Realme</span>
+                    </div>
+                    <div class="brand-item" data-filter="Redmi">
+                        <div class="brand-circle"><img src="assets/images/brands/redmi.png" alt="Redmi"></div>
+                        <span>Redmi</span>
+                    </div>
+                    <div class="brand-item" data-filter="Motorola">
+                        <div class="brand-circle"><img src="assets/images/brands/motorola.png" alt="Motorola"></div>
+                        <span>Motorola</span>
+                    </div>
+                    <div class="brand-item" data-filter="Nokia">
+                        <div class="brand-circle"><img src="assets/images/brands/nokia.png" alt="Nokia"></div>
+                        <span>Nokia</span>
+                    </div>
+                </div>
+                <button class="slider-arrow right-arrow" id="brand-scroll-right"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
 
     <!-- 3. Products Section -->
     <section class="products-section fade-in" id="products-section">
@@ -125,7 +194,7 @@
                 <div class="link-group">
                     <h4>Contact Us</h4>
                     <ul>
-                        <li><i class="fas fa-phone"></i> +91 XXXXXXXXXX</li>
+                        <li><i class="fas fa-phone"></i> +91 8544616321</li>
                         <li><i class="fas fa-envelope"></i> info@br02.com</li>
                         <li><i class="fas fa-location-dot"></i> 123 Tech Street, NY</li>
                     </ul>
@@ -134,10 +203,10 @@
                 <div class="link-group">
                     <h4>Follow Us</h4>
                     <div class="social-links">
-                        <a href="#" class="ig" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://instagram.com/br02mobiles" class="ig" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="fb" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://wa.me/91XXXXXXXXXX" class="wa" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="tel:+91XXXXXXXXXX" class="ph" aria-label="Phone"><i class="fas fa-phone"></i></a>
+                        <a href="https://wa.me/918544616321" class="wa" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="tel:+918544616321" class="ph" aria-label="Phone"><i class="fas fa-phone"></i></a>
                     </div>
                 </div>
             </div>
@@ -148,7 +217,7 @@
     </footer>
 
     <!-- 7. Floating WhatsApp Icon -->
-    <a href="https://wa.me/91XXXXXXXXXX" class="floating-wa pulse-glow" id="floating-wa" target="_blank" aria-label="Chat with us on WhatsApp">
+    <a href="https://wa.me/918544616321" class="floating-wa pulse-glow" id="floating-wa" target="_blank" aria-label="Chat with us on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 

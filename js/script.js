@@ -12,37 +12,52 @@ const formatToINR = (price) => {
    1. SAMPLE PRODUCT DATA (24 items)
    ========================================= */
 const productsData = [
-    { id: 1, brand: 'Samsung', name: 'Galaxy S23 Ultra', price: 95000, ram: '12GB', storage: '256GB', condition: 'Like New', battery: '95%', image: 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=600&auto=format&fit=crop' },
-    { id: 2, brand: 'Apple', name: 'iPhone 13 Pro', price: 72000, ram: '6GB', storage: '128GB', condition: 'Excellent', battery: '89%', image: 'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?q=80&w=600&auto=format&fit=crop' },
-    { id: 3, brand: 'Redmi', name: 'Note 12 Pro', price: 21000, ram: '8GB', storage: '256GB', condition: 'Good', battery: '92%', image: 'https://images.unsplash.com/photo-1598327105654-36eefaca32ea?q=80&w=600&auto=format&fit=crop' },
-    { id: 4, brand: 'Realme', name: 'Narzo 50', price: 15000, ram: '4GB', storage: '64GB', condition: 'Fair', battery: '85%', image: 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbc0?q=80&w=600&auto=format&fit=crop' },
-    { id: 5, brand: 'OnePlus', name: '11R 5G', price: 45000, ram: '8GB', storage: '128GB', condition: 'Excellent', battery: '98%', image: 'https://images.unsplash.com/photo-1678911820864-e2c567c655d7?q=80&w=600&auto=format&fit=crop' },
-    { id: 6, brand: 'Samsung', name: 'Galaxy M31', price: 12000, ram: '6GB', storage: '128GB', condition: 'Good', battery: '82%', image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=600&auto=format&fit=crop' },
-    { id: 7, brand: 'Apple', name: 'iPhone 11', price: 28000, ram: '4GB', storage: '64GB', condition: 'Good', battery: '84%', image: 'https://images.unsplash.com/photo-1512054502232-10a0a035d672?q=80&w=600&auto=format&fit=crop' },
-    { id: 8, brand: 'Google', name: 'Pixel 7', price: 40000, ram: '8GB', storage: '128GB', condition: 'Excellent', battery: '94%', image: 'https://images.unsplash.com/photo-1598327105654-36eefaca32ea?q=80&w=600&auto=format&fit=crop' },
-    { id: 9, brand: 'Nothing', name: 'Phone (1)', price: 32000, ram: '8GB', storage: '256GB', condition: 'Like New', battery: '96%', image: 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbc0?q=80&w=600&auto=format&fit=crop' },
-    { id: 10, brand: 'Vivo', name: 'V27 Pro', price: 34000, ram: '8GB', storage: '128GB', condition: 'Good', battery: '90%', image: 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=600&auto=format&fit=crop' },
-    { id: 11, brand: 'Oppo', name: 'Reno 8T', price: 29000, ram: '8GB', storage: '128GB', condition: 'Excellent', battery: '95%', image: 'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?q=80&w=600&auto=format&fit=crop' },
-    { id: 12, brand: 'Samsung', name: 'Galaxy A54', price: 31000, ram: '8GB', storage: '256GB', condition: 'Like New', battery: '98%', image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=600&auto=format&fit=crop' },
-    { id: 13, brand: 'Apple', name: 'iPhone 12 Mini', price: 35000, ram: '4GB', storage: '64GB', condition: 'Good', battery: '86%', image: 'https://images.unsplash.com/photo-1512054502232-10a0a035d672?q=80&w=600&auto=format&fit=crop' },
-    { id: 14, brand: 'Xiaomi', name: 'Mi 11X', price: 22000, ram: '6GB', storage: '128GB', condition: 'Fair', battery: '81%', image: 'https://images.unsplash.com/photo-1598327105654-36eefaca32ea?q=80&w=600&auto=format&fit=crop' },
-    { id: 15, brand: 'Motorola', name: 'Edge 40', price: 32000, ram: '8GB', storage: '256GB', condition: 'Excellent', battery: '93%', image: 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbc0?q=80&w=600&auto=format&fit=crop' },
-    { id: 16, brand: 'Realme', name: 'GT Neo 3', price: 28000, ram: '8GB', storage: '128GB', condition: 'Good', battery: '88%', image: 'https://images.unsplash.com/photo-1678911820864-e2c567c655d7?q=80&w=600&auto=format&fit=crop' },
-    { id: 17, brand: 'Samsung', name: 'Galaxy F23', price: 14000, ram: '6GB', storage: '128GB', condition: 'Fair', battery: '80%', image: 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=600&auto=format&fit=crop' },
-    { id: 18, brand: 'Apple', name: 'iPhone SE 2020', price: 18000, ram: '3GB', storage: '64GB', condition: 'Good', battery: '82%', image: 'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?q=80&w=600&auto=format&fit=crop' },
-    { id: 19, brand: 'Poco', name: 'X5 Pro', price: 24000, ram: '8GB', storage: '256GB', condition: 'Like New', battery: '97%', image: 'https://images.unsplash.com/photo-1598327105654-36eefaca32ea?q=80&w=600&auto=format&fit=crop' },
-    { id: 20, brand: 'OnePlus', name: 'Nord CE 2', price: 20000, ram: '6GB', storage: '128GB', condition: 'Good', battery: '85%', image: 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbc0?q=80&w=600&auto=format&fit=crop' },
-    { id: 21, brand: 'Vivo', name: 'T2x 5G', price: 16000, ram: '6GB', storage: '128GB', condition: 'Excellent', battery: '92%', image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=600&auto=format&fit=crop' },
-    { id: 22, brand: 'Samsung', name: 'Galaxy S21 FE', price: 38000, ram: '8GB', storage: '128GB', condition: 'Very Good', battery: '88%', image: 'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?q=80&w=600&auto=format&fit=crop' },
-    { id: 23, brand: 'Apple', name: 'iPhone 13', price: 58000, ram: '4GB', storage: '128GB', condition: 'Good', battery: '84%', image: 'https://images.unsplash.com/photo-1512054502232-10a0a035d672?q=80&w=600&auto=format&fit=crop' },
-    { id: 24, brand: 'Xiaomi', name: 'Redmi Note 12', price: 18000, ram: '6GB', storage: '128GB', condition: 'Like New', battery: '96%', image: 'https://images.unsplash.com/photo-1678911820864-e2c567c655d7?q=80&w=600&auto=format&fit=crop' }
+    { id: 1,  brand: 'Samsung',  name: 'Galaxy S23 Ultra',  price: 95000, ram: '12GB', storage: '256GB', condition: 'Like New',   battery: '95%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=600&auto=format&fit=crop' },
+    { id: 2,  brand: 'Apple',    name: 'iPhone 13 Pro',     price: 72000, ram: '6GB',  storage: '128GB', condition: 'Excellent',  battery: '89%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?q=80&w=600&auto=format&fit=crop' },
+    { id: 3,  brand: 'Redmi',    name: 'Note 12 Pro',       price: 21000, ram: '8GB',  storage: '256GB', condition: 'Good',       battery: '92%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1598327105654-36eefaca32ea?q=80&w=600&auto=format&fit=crop' },
+    { id: 4,  brand: 'Realme',   name: 'Narzo 50',          price: 15000, ram: '4GB',  storage: '64GB',  condition: 'Fair',       battery: '85%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbc0?q=80&w=600&auto=format&fit=crop' },
+    { id: 5,  brand: 'OnePlus',  name: '11R 5G',            price: 45000, ram: '8GB',  storage: '128GB', condition: 'Excellent',  battery: '98%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1678911820864-e2c567c655d7?q=80&w=600&auto=format&fit=crop' },
+    { id: 6,  brand: 'Samsung',  name: 'Galaxy M31',        price: 12000, ram: '6GB',  storage: '128GB', condition: 'Good',       battery: '82%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=600&auto=format&fit=crop' },
+    { id: 7,  brand: 'Apple',    name: 'iPhone 11',         price: 28000, ram: '4GB',  storage: '64GB',  condition: 'Good',       battery: '84%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1512054502232-10a0a035d672?q=80&w=600&auto=format&fit=crop' },
+    { id: 8,  brand: 'Google',   name: 'Pixel 7',           price: 40000, ram: '8GB',  storage: '128GB', condition: 'Excellent',  battery: '94%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1598327105654-36eefaca32ea?q=80&w=600&auto=format&fit=crop' },
+    { id: 9,  brand: 'Nothing',  name: 'Phone (1)',         price: 32000, ram: '8GB',  storage: '256GB', condition: 'Like New',   battery: '96%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbc0?q=80&w=600&auto=format&fit=crop' },
+    { id: 10, brand: 'Vivo',     name: 'V27 Pro',           price: 34000, ram: '8GB',  storage: '128GB', condition: 'Good',       battery: '90%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=600&auto=format&fit=crop' },
+    { id: 11, brand: 'Oppo',     name: 'Reno 8T',           price: 29000, ram: '8GB',  storage: '128GB', condition: 'Excellent',  battery: '95%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?q=80&w=600&auto=format&fit=crop' },
+    { id: 12, brand: 'Samsung',  name: 'Galaxy A54',        price: 31000, ram: '8GB',  storage: '256GB', condition: 'Like New',   battery: '98%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=600&auto=format&fit=crop' },
+    { id: 13, brand: 'Apple',    name: 'iPhone 12 Mini',    price: 35000, ram: '4GB',  storage: '64GB',  condition: 'Good',       battery: '86%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1512054502232-10a0a035d672?q=80&w=600&auto=format&fit=crop' },
+    { id: 14, brand: 'Xiaomi',   name: 'Mi 11X',            price: 22000, ram: '6GB',  storage: '128GB', condition: 'Fair',       battery: '81%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1598327105654-36eefaca32ea?q=80&w=600&auto=format&fit=crop' },
+    { id: 15, brand: 'Motorola', name: 'Edge 40',           price: 32000, ram: '8GB',  storage: '256GB', condition: 'Excellent',  battery: '93%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbc0?q=80&w=600&auto=format&fit=crop' },
+    { id: 16, brand: 'Realme',   name: 'GT Neo 3',          price: 28000, ram: '8GB',  storage: '128GB', condition: 'Good',       battery: '88%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1678911820864-e2c567c655d7?q=80&w=600&auto=format&fit=crop' },
+    { id: 17, brand: 'Samsung',  name: 'Galaxy F23',        price: 14000, ram: '6GB',  storage: '128GB', condition: 'Fair',       battery: '80%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=600&auto=format&fit=crop' },
+    { id: 18, brand: 'Apple',    name: 'iPhone SE 2020',    price: 18000, ram: '3GB',  storage: '64GB',  condition: 'Good',       battery: '82%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?q=80&w=600&auto=format&fit=crop' },
+    { id: 19, brand: 'Poco',     name: 'X5 Pro',            price: 24000, ram: '8GB',  storage: '256GB', condition: 'Like New',   battery: '97%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1598327105654-36eefaca32ea?q=80&w=600&auto=format&fit=crop' },
+    { id: 20, brand: 'OnePlus',  name: 'Nord CE 2',         price: 20000, ram: '6GB',  storage: '128GB', condition: 'Good',       battery: '85%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbc0?q=80&w=600&auto=format&fit=crop' },
+    { id: 21, brand: 'Vivo',     name: 'T2x 5G',            price: 16000, ram: '6GB',  storage: '128GB', condition: 'Excellent',  battery: '92%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=600&auto=format&fit=crop' },
+    { id: 22, brand: 'Samsung',  name: 'Galaxy S21 FE',     price: 38000, ram: '8GB',  storage: '128GB', condition: 'Very Good',  battery: '88%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?q=80&w=600&auto=format&fit=crop' },
+    { id: 23, brand: 'Apple',    name: 'iPhone 13',         price: 58000, ram: '4GB',  storage: '128GB', condition: 'Good',       battery: '84%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1512054502232-10a0a035d672?q=80&w=600&auto=format&fit=crop' },
+    { id: 24, brand: 'Xiaomi',   name: 'Redmi Note 12',     price: 18000, ram: '6GB',  storage: '128GB', condition: 'Like New',   battery: '96%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1678911820864-e2c567c655d7?q=80&w=600&auto=format&fit=crop' }
 ];
 
-const waNumber = '91XXXXXXXXXX'; 
+const waNumber = '918544616321'; 
 let wishlist = JSON.parse(localStorage.getItem('br02_wishlist')) || [];
 let filteredData = [...productsData];
+let currentBrandFilter = 'All';
 
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Logo Rotation ---
+    const logoImageView = document.getElementById('logo-image-view');
+    const logoTextView  = document.getElementById('logo-text-view');
+    if (logoImageView && logoTextView) {
+        // Start with image visible, text hidden
+        logoTextView.classList.add('logo-hidden');
+        let showingImage = true;
+        setInterval(() => {
+            showingImage = !showingImage;
+            logoImageView.classList.toggle('logo-hidden', !showingImage);
+            logoTextView.classList.toggle('logo-hidden',  showingImage);
+        }, 3000);
+    }
+
     // Mobile Menu Toggle
     const mobileMenu = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
@@ -84,11 +99,10 @@ document.addEventListener('DOMContentLoaded', () => {
     searchInputs.forEach(input => {
         input.addEventListener('input', (e) => {
             if(!isHomePage) {
-                // Redirect to home with query parameter if on product page
                 window.location.href = `index.html?search=${encodeURIComponent(e.target.value)}`;
                 return;
             }
-            handleSearch(e.target.value);
+            applyFilters();
         });
     });
 
@@ -99,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if(searchQ) {
             const si = document.getElementById('search-input');
             if(si) si.value = searchQ;
-            handleSearch(searchQ);
+            applyFilters();
         }
     }
 });
@@ -187,12 +201,14 @@ window.removeFromWishlistModal = (id) => {
    ========================================= */
 let currentItemCount = 20;
 
-function handleSearch(query) {
-    const q = query.toLowerCase();
-    filteredData = productsData.filter(p => 
-        p.name.toLowerCase().includes(q) || p.brand.toLowerCase().includes(q)
-    );
-    currentItemCount = 20; // reset counter on search
+function applyFilters() {
+    const q = document.getElementById('search-input')?.value.toLowerCase() || '';
+    filteredData = productsData.filter(p => {
+        const matchesSearch = p.name.toLowerCase().includes(q) || p.brand.toLowerCase().includes(q);
+        const matchesBrand = currentBrandFilter === 'All' || p.brand === currentBrandFilter;
+        return matchesSearch && matchesBrand;
+    });
+    currentItemCount = 20; // reset counter on search/filter
     renderProducts(currentItemCount);
 }
 
@@ -243,6 +259,32 @@ function initHomePage() {
         goToSlide(currentSlide);
     }, 3000);
 
+    // --- Brand Filter & Slider Logic ---
+    const brandItems = document.querySelectorAll('.brand-item');
+    brandItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            brandItems.forEach(b => b.classList.remove('active'));
+            const target = e.currentTarget;
+            target.classList.add('active');
+            
+            currentBrandFilter = target.getAttribute('data-filter');
+            applyFilters();
+        });
+    });
+
+    const scrollLeftBtn = document.getElementById('brand-scroll-left');
+    const scrollRightBtn = document.getElementById('brand-scroll-right');
+    const brandList = document.getElementById('brand-list');
+    
+    if(scrollLeftBtn && scrollRightBtn && brandList) {
+        scrollLeftBtn.addEventListener('click', () => {
+            brandList.scrollBy({ left: -200, behavior: 'smooth' });
+        });
+        scrollRightBtn.addEventListener('click', () => {
+            brandList.scrollBy({ left: 200, behavior: 'smooth' });
+        });
+    }
+
     // Initial render
     renderProducts(currentItemCount);
 
@@ -277,6 +319,7 @@ function renderProducts(limit, isAppending = false) {
     itemsToShow.forEach(product => {
         const card = document.createElement('div');
         card.className = 'product-card';
+        card.setAttribute('data-brand', product.brand);
         // Clicking whole card opens details page
         card.addEventListener('click', () => { window.location.href = `product.html?id=${product.id}`; });
 
@@ -284,6 +327,7 @@ function renderProducts(limit, isAppending = false) {
         const waLink = `https://wa.me/${waNumber}?text=${waMessage}`;
 
         const isWished = wishlist.includes(product.id);
+        const ytLink = product.youtubeLink || 'https://www.youtube.com/results?search_query=' + encodeURIComponent(product.brand + ' ' + product.name);
 
         card.innerHTML = `
             <button class="wishlist-btn ${isWished ? 'active' : ''}" data-id="${product.id}" onclick="toggleWishlist(event, ${product.id})">
@@ -297,10 +341,10 @@ function renderProducts(limit, isAppending = false) {
                 
                 <div class="product-actions">
                     <button class="btn-secondary" onclick="event.stopPropagation(); window.location.href='product.html?id=${product.id}'">
-                        <i class="fas fa-eye"></i> View Details
+                        <i class="fas fa-eye"></i> Details
                     </button>
-                    <a href="${waLink}" target="_blank" class="btn-whatsapp" onclick="event.stopPropagation()">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    <a href="${ytLink}" target="_blank" class="btn-youtube" onclick="event.stopPropagation()">
+                        <i class="fab fa-youtube"></i> Video
                     </a>
                 </div>
             </div>
