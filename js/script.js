@@ -12,33 +12,129 @@ const formatToINR = (price) => {
    1. SAMPLE PRODUCT DATA (24 items)
    ========================================= */
 const productsData = [
-    { id: 1,  brand: 'Samsung',  name: 'Xr Convert 17Pro',  price: 20000, ram: '12GB', storage: '128GB', condition: 'Like New',   battery: '95%', youtubeLink: 'https://youtube.com/shorts/uVBkLY_-9qM?si=IajYx_B9X3dxBc1o', image: 'assets/images/product_img/product1.jpg',},
-    { id: 2,  brand: 'Apple',    name: 'iPhone 13 Pro',     price: 72000, ram: '6GB',  storage: '128GB', condition: 'Excellent',  battery: '89%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?q=80&w=600&auto=format&fit=crop' },
-    { id: 3,  brand: 'Redmi',    name: 'Note 12 Pro',       price: 21000, ram: '8GB',  storage: '256GB', condition: 'Good',       battery: '92%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1598327105654-36eefaca32ea?q=80&w=600&auto=format&fit=crop' },
-    { id: 4,  brand: 'Realme',   name: 'Narzo 50',          price: 15000, ram: '4GB',  storage: '64GB',  condition: 'Fair',       battery: '85%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbc0?q=80&w=600&auto=format&fit=crop' },
-    { id: 5,  brand: 'OnePlus',  name: '11R 5G',            price: 45000, ram: '8GB',  storage: '128GB', condition: 'Excellent',  battery: '98%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1678911820864-e2c567c655d7?q=80&w=600&auto=format&fit=crop' },
-    { id: 6,  brand: 'Samsung',  name: 'Galaxy M31',        price: 12000, ram: '6GB',  storage: '128GB', condition: 'Good',       battery: '82%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=600&auto=format&fit=crop' },
-    { id: 7,  brand: 'Apple',    name: 'iPhone 11',         price: 28000, ram: '4GB',  storage: '64GB',  condition: 'Good',       battery: '84%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1512054502232-10a0a035d672?q=80&w=600&auto=format&fit=crop' },
-    { id: 8,  brand: 'Google',   name: 'Pixel 7',           price: 40000, ram: '8GB',  storage: '128GB', condition: 'Excellent',  battery: '94%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1598327105654-36eefaca32ea?q=80&w=600&auto=format&fit=crop' },
-    { id: 9,  brand: 'Nothing',  name: 'Phone (1)',         price: 32000, ram: '8GB',  storage: '256GB', condition: 'Like New',   battery: '96%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbc0?q=80&w=600&auto=format&fit=crop' },
-    { id: 10, brand: 'Vivo',     name: 'V27 Pro',           price: 34000, ram: '8GB',  storage: '128GB', condition: 'Good',       battery: '90%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=600&auto=format&fit=crop' },
-    { id: 11, brand: 'Oppo',     name: 'Reno 8T',           price: 29000, ram: '8GB',  storage: '128GB', condition: 'Excellent',  battery: '95%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?q=80&w=600&auto=format&fit=crop' },
-    { id: 12, brand: 'Samsung',  name: 'Galaxy A54',        price: 31000, ram: '8GB',  storage: '256GB', condition: 'Like New',   battery: '98%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=600&auto=format&fit=crop' },
-    { id: 13, brand: 'Apple',    name: 'iPhone 12 Mini',    price: 35000, ram: '4GB',  storage: '64GB',  condition: 'Good',       battery: '86%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1512054502232-10a0a035d672?q=80&w=600&auto=format&fit=crop' },
-    { id: 14, brand: 'Xiaomi',   name: 'Mi 11X',            price: 22000, ram: '6GB',  storage: '128GB', condition: 'Fair',       battery: '81%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1598327105654-36eefaca32ea?q=80&w=600&auto=format&fit=crop' },
-    { id: 15, brand: 'Motorola', name: 'Edge 40',           price: 32000, ram: '8GB',  storage: '256GB', condition: 'Excellent',  battery: '93%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbc0?q=80&w=600&auto=format&fit=crop' },
-    { id: 16, brand: 'Realme',   name: 'GT Neo 3',          price: 28000, ram: '8GB',  storage: '128GB', condition: 'Good',       battery: '88%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1678911820864-e2c567c655d7?q=80&w=600&auto=format&fit=crop' },
-    { id: 17, brand: 'Samsung',  name: 'Galaxy F23',        price: 14000, ram: '6GB',  storage: '128GB', condition: 'Fair',       battery: '80%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=600&auto=format&fit=crop' },
-    { id: 18, brand: 'Apple',    name: 'iPhone SE 2020',    price: 18000, ram: '3GB',  storage: '64GB',  condition: 'Good',       battery: '82%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?q=80&w=600&auto=format&fit=crop' },
-    { id: 19, brand: 'Poco',     name: 'X5 Pro',            price: 24000, ram: '8GB',  storage: '256GB', condition: 'Like New',   battery: '97%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1598327105654-36eefaca32ea?q=80&w=600&auto=format&fit=crop' },
-    { id: 20, brand: 'OnePlus',  name: 'Nord CE 2',         price: 20000, ram: '6GB',  storage: '128GB', condition: 'Good',       battery: '85%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbc0?q=80&w=600&auto=format&fit=crop' },
-    { id: 21, brand: 'Vivo',     name: 'T2x 5G',            price: 16000, ram: '6GB',  storage: '128GB', condition: 'Excellent',  battery: '92%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=600&auto=format&fit=crop' },
-    { id: 22, brand: 'Samsung',  name: 'Galaxy S21 FE',     price: 38000, ram: '8GB',  storage: '128GB', condition: 'Very Good',  battery: '88%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?q=80&w=600&auto=format&fit=crop' },
-    { id: 23, brand: 'Apple',    name: 'iPhone 13',         price: 58000, ram: '4GB',  storage: '128GB', condition: 'Good',       battery: '84%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1512054502232-10a0a035d672?q=80&w=600&auto=format&fit=crop' },
-    { id: 24, brand: 'Xiaomi',   name: 'Redmi Note 12',     price: 18000, ram: '6GB',  storage: '128GB', condition: 'Like New',   battery: '96%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', image: 'https://images.unsplash.com/photo-1678911820864-e2c567c655d7?q=80&w=600&auto=format&fit=crop' }
+    {
+        id: 1, brand: 'Apple', name: 'Xr Convert 17Pro', price: 20000, Charger: 'Yes', storage: '128GB', condition: 'Like New', battery: '100%', youtubeLink: 'https://youtube.com/shorts/uVBkLY_-9qM?si=IajYx_B9X3dxBc1o',
+        images: ['assets/images/product_img/product1.jpg', 'assets/images/product_img/product1_2.avif', 'assets/images/product_img/product1_3.jpg', 'assets/images/product_img/product1_4.jpg'],
+        image: 'assets/images/product_img/product1.jpg'
+    },
+    {
+        id: 2, brand: 'Apple', name: 'iPhone 13 Pro', price: 72000, ram: '6GB', storage: '128GB', condition: 'Excellent', battery: '89%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        images: ['https://images.unsplash.com/photo-1632661674596-df8be070a5c5?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1565849904461-04a58ad377e0?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?q=80&w=600&auto=format&fit=crop'],
+        image: 'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?q=80&w=600&auto=format&fit=crop'
+    },
+    {
+        id: 3, brand: 'Samsung', name: 'S25 Ultra', price: 85000, ram: '12GB', storage: '512GB', condition: 'Good', battery: '100%', youtubeLink: 'https://youtube.com/shorts/GmJQM_wRKlI?si=CRnFaRbzkASGS_EY',
+        images: ['assets/images/product_img/product2.jpg', 'assets/images/product_img/product2_2.jpg', 'assets/images/product_img/product2_3.webp', 'assets/images/product_img/product2_4.jpg'],
+        image: 'assets/images/product_img/product2_2.jpg'
+    },
+    {
+        id: 4, brand: 'Realme', name: 'Narzo 50', price: 15000, ram: '4GB', storage: '64GB', condition: 'Fair', battery: '85%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        images: ['https://images.unsplash.com/photo-1601784551446-20c9e07cdbc0?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1585060544812-6b45742d762f?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1678911820864-e2c567c655d7?q=80&w=600&auto=format&fit=crop'],
+        image: 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbc0?q=80&w=600&auto=format&fit=crop'
+    },
+    {
+        id: 5, brand: 'OnePlus', name: '11R 5G', price: 45000, ram: '8GB', storage: '128GB', condition: 'Excellent', battery: '98%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        images: ['https://images.unsplash.com/photo-1678911820864-e2c567c655d7?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1598327105654-36eefaca32ea?q=80&w=600&auto=format&fit=crop'],
+        image: 'https://images.unsplash.com/photo-1678911820864-e2c567c655d7?q=80&w=600&auto=format&fit=crop'
+    },
+    {
+        id: 6, brand: 'Samsung', name: 'Galaxy M31', price: 12000, ram: '6GB', storage: '128GB', condition: 'Good', battery: '82%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        images: ['https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1512054502232-10a0a035d672?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=600&auto=format&fit=crop'],
+        image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=600&auto=format&fit=crop'
+    },
+    {
+        id: 7, brand: 'Apple', name: 'iPhone 11', price: 28000, ram: '4GB', storage: '64GB', condition: 'Good', battery: '84%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        images: ['https://images.unsplash.com/photo-1512054502232-10a0a035d672?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1565849904461-04a58ad377e0?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbc0?q=80&w=600&auto=format&fit=crop'],
+        image: 'https://images.unsplash.com/photo-1512054502232-10a0a035d672?q=80&w=600&auto=format&fit=crop'
+    },
+    {
+        id: 8, brand: 'Google', name: 'Pixel 7', price: 40000, ram: '8GB', storage: '128GB', condition: 'Excellent', battery: '94%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        images: ['https://images.unsplash.com/photo-1598327105654-36eefaca32ea?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1678911820864-e2c567c655d7?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1585060544812-6b45742d762f?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=600&auto=format&fit=crop'],
+        image: 'https://images.unsplash.com/photo-1598327105654-36eefaca32ea?q=80&w=600&auto=format&fit=crop'
+    },
+    {
+        id: 9, brand: 'Nothing', name: 'Phone (1)', price: 32000, ram: '8GB', storage: '256GB', condition: 'Like New', battery: '96%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        images: ['https://images.unsplash.com/photo-1601784551446-20c9e07cdbc0?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=600&auto=format&fit=crop'],
+        image: 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbc0?q=80&w=600&auto=format&fit=crop'
+    },
+    {
+        id: 10, brand: 'Vivo', name: 'V27 Pro', price: 34000, ram: '8GB', storage: '128GB', condition: 'Good', battery: '90%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        images: ['https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1512054502232-10a0a035d672?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1598327105654-36eefaca32ea?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1678911820864-e2c567c655d7?q=80&w=600&auto=format&fit=crop'],
+        image: 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=600&auto=format&fit=crop'
+    },
+    {
+        id: 11, brand: 'Oppo', name: 'Reno 8T', price: 29000, ram: '8GB', storage: '128GB', condition: 'Excellent', battery: '95%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        images: ['https://images.unsplash.com/photo-1632661674596-df8be070a5c5?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1565849904461-04a58ad377e0?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1585060544812-6b45742d762f?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=600&auto=format&fit=crop'],
+        image: 'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?q=80&w=600&auto=format&fit=crop'
+    },
+    {
+        id: 12, brand: 'Samsung', name: 'Galaxy A54', price: 31000, ram: '8GB', storage: '256GB', condition: 'Like New', battery: '98%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        images: ['https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1678911820864-e2c567c655d7?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbc0?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?q=80&w=600&auto=format&fit=crop'],
+        image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=600&auto=format&fit=crop'
+    },
+    {
+        id: 13, brand: 'Apple', name: 'iPhone 12 Mini', price: 35000, ram: '4GB', storage: '64GB', condition: 'Good', battery: '86%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        images: ['https://images.unsplash.com/photo-1512054502232-10a0a035d672?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1565849904461-04a58ad377e0?q=80&w=600&auto=format&fit=crop'],
+        image: 'https://images.unsplash.com/photo-1512054502232-10a0a035d672?q=80&w=600&auto=format&fit=crop'
+    },
+    {
+        id: 14, brand: 'Xiaomi', name: 'Mi 11X', price: 22000, ram: '6GB', storage: '128GB', condition: 'Fair', battery: '81%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        images: ['https://images.unsplash.com/photo-1598327105654-36eefaca32ea?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbc0?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1585060544812-6b45742d762f?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1678911820864-e2c567c655d7?q=80&w=600&auto=format&fit=crop'],
+        image: 'https://images.unsplash.com/photo-1598327105654-36eefaca32ea?q=80&w=600&auto=format&fit=crop'
+    },
+    {
+        id: 15, brand: 'Motorola', name: 'Edge 40', price: 32000, ram: '8GB', storage: '256GB', condition: 'Excellent', battery: '93%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        images: ['https://images.unsplash.com/photo-1601784551446-20c9e07cdbc0?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1512054502232-10a0a035d672?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1598327105654-36eefaca32ea?q=80&w=600&auto=format&fit=crop'],
+        image: 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbc0?q=80&w=600&auto=format&fit=crop'
+    },
+    {
+        id: 16, brand: 'Realme', name: 'GT Neo 3', price: 28000, ram: '8GB', storage: '128GB', condition: 'Good', battery: '88%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        images: ['https://images.unsplash.com/photo-1678911820864-e2c567c655d7?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1585060544812-6b45742d762f?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?q=80&w=600&auto=format&fit=crop'],
+        image: 'https://images.unsplash.com/photo-1678911820864-e2c567c655d7?q=80&w=600&auto=format&fit=crop'
+    },
+    {
+        id: 17, brand: 'Samsung', name: 'Galaxy F23', price: 14000, ram: '6GB', storage: '128GB', condition: 'Fair', battery: '80%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        images: ['https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbc0?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1678911820864-e2c567c655d7?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1512054502232-10a0a035d672?q=80&w=600&auto=format&fit=crop'],
+        image: 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=600&auto=format&fit=crop'
+    },
+    {
+        id: 18, brand: 'Apple', name: 'iPhone SE 2020', price: 18000, ram: '3GB', storage: '64GB', condition: 'Good', battery: '82%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        images: ['https://images.unsplash.com/photo-1632661674596-df8be070a5c5?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1598327105654-36eefaca32ea?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?q=80&w=600&auto=format&fit=crop'],
+        image: 'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?q=80&w=600&auto=format&fit=crop'
+    },
+    {
+        id: 19, brand: 'Poco', name: 'X5 Pro', price: 24000, ram: '8GB', storage: '256GB', condition: 'Like New', battery: '97%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        images: ['https://images.unsplash.com/photo-1598327105654-36eefaca32ea?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1565849904461-04a58ad377e0?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1678911820864-e2c567c655d7?q=80&w=600&auto=format&fit=crop'],
+        image: 'https://images.unsplash.com/photo-1598327105654-36eefaca32ea?q=80&w=600&auto=format&fit=crop'
+    },
+    {
+        id: 20, brand: 'OnePlus', name: 'Nord CE 2', price: 20000, ram: '6GB', storage: '128GB', condition: 'Good', battery: '85%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        images: ['https://images.unsplash.com/photo-1601784551446-20c9e07cdbc0?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1585060544812-6b45742d762f?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=600&auto=format&fit=crop'],
+        image: 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbc0?q=80&w=600&auto=format&fit=crop'
+    },
+    {
+        id: 21, brand: 'Vivo', name: 'T2x 5G', price: 16000, ram: '6GB', storage: '128GB', condition: 'Excellent', battery: '92%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        images: ['https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbc0?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1512054502232-10a0a035d672?q=80&w=600&auto=format&fit=crop'],
+        image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=600&auto=format&fit=crop'
+    },
+    {
+        id: 22, brand: 'Samsung', name: 'Galaxy S21 FE', price: 38000, ram: '8GB', storage: '128GB', condition: 'Very Good', battery: '88%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        images: ['https://images.unsplash.com/photo-1632661674596-df8be070a5c5?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1598327105654-36eefaca32ea?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1678911820864-e2c567c655d7?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1565849904461-04a58ad377e0?q=80&w=600&auto=format&fit=crop'],
+        image: 'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?q=80&w=600&auto=format&fit=crop'
+    },
+    {
+        id: 23, brand: 'Apple', name: 'iPhone 13', price: 58000, ram: '4GB', storage: '128GB', condition: 'Good', battery: '84%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        images: ['https://images.unsplash.com/photo-1512054502232-10a0a035d672?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=600&auto=format&fit=crop'],
+        image: 'https://images.unsplash.com/photo-1512054502232-10a0a035d672?q=80&w=600&auto=format&fit=crop'
+    },
+    {
+        id: 24, brand: 'Xiaomi', name: 'Redmi Note 12', price: 18000, ram: '6GB', storage: '128GB', condition: 'Like New', battery: '96%', youtubeLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        images: ['https://images.unsplash.com/photo-1678911820864-e2c567c655d7?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1585060544812-6b45742d762f?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbc0?q=80&w=600&auto=format&fit=crop', 'https://images.unsplash.com/photo-1598327105654-36eefaca32ea?q=80&w=600&auto=format&fit=crop'],
+        image: 'https://images.unsplash.com/photo-1678911820864-e2c567c655d7?q=80&w=600&auto=format&fit=crop'
+    }
 ];
 
-const waNumber = '918544616321'; 
+const waNumber = '918544616321';
 let wishlist = JSON.parse(localStorage.getItem('br02_wishlist')) || [];
 let filteredData = [...productsData];
 let currentBrandFilter = 'All';
@@ -46,7 +142,7 @@ let currentBrandFilter = 'All';
 document.addEventListener('DOMContentLoaded', () => {
     // --- Logo Rotation ---
     const logoImageView = document.getElementById('logo-image-view');
-    const logoTextView  = document.getElementById('logo-text-view');
+    const logoTextView = document.getElementById('logo-text-view');
     if (logoImageView && logoTextView) {
         // Start with image visible, text hidden
         logoTextView.classList.add('logo-hidden');
@@ -54,18 +150,18 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(() => {
             showingImage = !showingImage;
             logoImageView.classList.toggle('logo-hidden', !showingImage);
-            logoTextView.classList.toggle('logo-hidden',  showingImage);
+            logoTextView.classList.toggle('logo-hidden', showingImage);
         }, 3000);
     }
 
     // Mobile Menu Toggle
     const mobileMenu = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
-    if(mobileMenu) {
+    if (mobileMenu) {
         mobileMenu.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             const icon = mobileMenu.querySelector('i');
-            if(navLinks.classList.contains('active')) {
+            if (navLinks.classList.contains('active')) {
                 icon.classList.replace('fa-bars', 'fa-times');
             } else {
                 icon.classList.replace('fa-times', 'fa-bars');
@@ -75,16 +171,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Current Year in Footer
     const yearSpan = document.getElementById('current-year');
-    if(yearSpan) yearSpan.textContent = new Date().getFullYear();
+    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
     // Wishlist UI Hooks globally
     updateWishlistCount();
-    
+
     document.getElementById('wishlist-btn')?.addEventListener('click', openWishlist);
     document.getElementById('mobile-wishlist-trigger')?.addEventListener('click', (e) => { e.preventDefault(); openWishlist(); });
     document.getElementById('close-wishlist')?.addEventListener('click', closeWishlist);
     document.getElementById('wishlist-modal')?.addEventListener('click', (e) => {
-        if(e.target.id === 'wishlist-modal') closeWishlist();
+        if (e.target.id === 'wishlist-modal') closeWishlist();
     });
 
     // Identify current page
@@ -98,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInputs = document.querySelectorAll('#search-input');
     searchInputs.forEach(input => {
         input.addEventListener('input', (e) => {
-            if(!isHomePage) {
+            if (!isHomePage) {
                 window.location.href = `index.html?search=${encodeURIComponent(e.target.value)}`;
                 return;
             }
@@ -107,12 +203,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Pick search text from URL if returning to index
-    if(isHomePage) {
+    if (isHomePage) {
         const urlParams = new URLSearchParams(window.location.search);
         const searchQ = urlParams.get('search');
-        if(searchQ) {
+        if (searchQ) {
             const si = document.getElementById('search-input');
-            if(si) si.value = searchQ;
+            if (si) si.value = searchQ;
             applyFilters();
         }
     }
@@ -155,9 +251,9 @@ function closeWishlist() {
 
 function populateWishlistModal() {
     const body = document.getElementById('wishlist-body');
-    if(!body) return;
-    
-    if(wishlist.length === 0) {
+    if (!body) return;
+
+    if (wishlist.length === 0) {
         body.innerHTML = '<p style="text-align:center; color: var(--text-light); padding: 20px;">Your wishlist is empty.</p>';
         return;
     }
@@ -165,8 +261,8 @@ function populateWishlistModal() {
     body.innerHTML = '';
     wishlist.forEach(id => {
         const product = productsData.find(p => p.id === id);
-        if(!product) return;
-        
+        if (!product) return;
+
         const item = document.createElement('div');
         item.className = 'wishlist-item fade-in';
         item.innerHTML = `
@@ -183,14 +279,14 @@ function populateWishlistModal() {
 
 window.removeFromWishlistModal = (id) => {
     const index = wishlist.indexOf(id);
-    if(index > -1) wishlist.splice(index, 1);
+    if (index > -1) wishlist.splice(index, 1);
     localStorage.setItem('br02_wishlist', JSON.stringify(wishlist));
     updateWishlistCount();
     populateWishlistModal();
-    
+
     // Update grid icons if on home page
     const gridBtn = document.querySelector(`.wishlist-btn[data-id="${id}"] i`);
-    if(gridBtn) {
+    if (gridBtn) {
         gridBtn.classList.replace('fas', 'far');
         gridBtn.parentElement.classList.remove('active');
     }
@@ -216,7 +312,7 @@ function initHomePage() {
     // --- Carousel Logic ---
     const carouselTrack = document.getElementById('carousel-track');
     const carouselDotsContainer = document.getElementById('carousel-dots');
-    
+
     const bannerData = [
         { title: 'Best Deals on Used Mobiles', subtitle: 'Premium quality phones tested by experts', bg: 'assets/images/banner1.jpg' },
         { title: 'Up to 40% Discount', subtitle: 'On selected Apple and Samsung models', bg: 'assets/images/banner2.jpg' },
@@ -228,7 +324,7 @@ function initHomePage() {
         slide.className = 'slide';
         // Applying black overlay on image
         slide.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${banner.bg}')`;
-        
+
         slide.innerHTML = `
             <div class="slide-content">
                 <h2>${banner.title}</h2>
@@ -266,7 +362,7 @@ function initHomePage() {
             brandItems.forEach(b => b.classList.remove('active'));
             const target = e.currentTarget;
             target.classList.add('active');
-            
+
             currentBrandFilter = target.getAttribute('data-filter');
             applyFilters();
         });
@@ -275,8 +371,8 @@ function initHomePage() {
     const scrollLeftBtn = document.getElementById('brand-scroll-left');
     const scrollRightBtn = document.getElementById('brand-scroll-right');
     const brandList = document.getElementById('brand-list');
-    
-    if(scrollLeftBtn && scrollRightBtn && brandList) {
+
+    if (scrollLeftBtn && scrollRightBtn && brandList) {
         scrollLeftBtn.addEventListener('click', () => {
             brandList.scrollBy({ left: -200, behavior: 'smooth' });
         });
@@ -299,10 +395,10 @@ function renderProducts(limit, isAppending = false) {
     const productGrid = document.getElementById('product-grid');
     const loadMoreBtn = document.getElementById('load-more-btn');
     const noResults = document.getElementById('no-results');
-    
-    if(!isAppending) productGrid.innerHTML = '';
-    
-    if(filteredData.length === 0) {
+
+    if (!isAppending) productGrid.innerHTML = '';
+
+    if (filteredData.length === 0) {
         productGrid.style.display = 'none';
         noResults.style.display = 'block';
         loadMoreBtn.style.display = 'none';
@@ -315,7 +411,7 @@ function renderProducts(limit, isAppending = false) {
     // Figure out start and end
     const startObj = isAppending ? limit - 8 : 0;
     const itemsToShow = filteredData.slice(startObj, Math.min(limit, filteredData.length));
-    
+
     itemsToShow.forEach(product => {
         const card = document.createElement('div');
         card.className = 'product-card';
@@ -370,15 +466,33 @@ function initProductPage() {
     const product = productsData.find(p => p.id === productId);
 
     if (product) {
+        // Build the images array — fall back to single image if no array provided
+        const images = (product.images && product.images.length) ? product.images : [product.image];
+        let currentIndex = 0;
+
         const waMessage = encodeURIComponent(`Hi, I am interested in your ${product.brand} ${product.name} listed for ${formatToINR(product.price)}. Could you share more details?`);
         const waLink = `https://wa.me/${waNumber}?text=${waMessage}`;
 
+        // Build thumbnails HTML
+        const thumbsHTML = images.map((src, i) => `
+            <img src="${src}" alt="${product.name} view ${i + 1}" class="gallery-thumb ${i === 0 ? 'active' : ''}" data-index="${i}" loading="lazy">
+        `).join('');
+
         productContainer.innerHTML = `
             <div class="details-wrapper fade-in">
+                <!-- LEFT: Image Gallery -->
                 <div class="details-image">
-                    <img src="${product.image}" alt="${product.name}" loading="lazy">
+                    <div class="gallery-main-wrapper">
+                        <button class="gallery-arrow gallery-prev" id="gallery-prev"><i class="fas fa-chevron-left"></i></button>
+                        <img src="${images[0]}" alt="${product.name}" id="gallery-main-img" class="gallery-main-img" loading="lazy">
+                        <button class="gallery-arrow gallery-next" id="gallery-next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="gallery-thumbs" id="gallery-thumbs">
+                        ${thumbsHTML}
+                    </div>
                 </div>
-                
+
+                <!-- RIGHT: Product Info -->
                 <div class="details-info">
                     <div class="product-brand" style="margin-bottom: 10px; font-size: 1.2rem;">${product.brand}</div>
                     <h1>${product.name}</h1>
@@ -394,8 +508,8 @@ function initProductPage() {
                             <span class="spec-value">${product.name}</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">RAM</span>
-                            <span class="spec-value">${product.ram}</span>
+                            <span class="spec-label">Charger</span>
+                            <span class="spec-value">${product.Charger}</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Storage</span>
@@ -417,6 +531,106 @@ function initProductPage() {
                 </div>
             </div>
         `;
+
+        // --- Gallery Logic ---
+        const mainImg = document.getElementById('gallery-main-img');
+        const thumbs = document.querySelectorAll('.gallery-thumb');
+        const prevBtn = document.getElementById('gallery-prev');
+        const nextBtn = document.getElementById('gallery-next');
+
+        function goToImage(index) {
+            currentIndex = (index + images.length) % images.length;
+            mainImg.style.opacity = '0';
+            setTimeout(() => {
+                mainImg.src = images[currentIndex];
+                mainImg.style.opacity = '1';
+            }, 150);
+            thumbs.forEach((t, i) => t.classList.toggle('active', i === currentIndex));
+        }
+
+        thumbs.forEach(thumb => {
+            thumb.addEventListener('click', () => goToImage(parseInt(thumb.dataset.index)));
+        });
+        prevBtn.addEventListener('click', () => goToImage(currentIndex - 1));
+        nextBtn.addEventListener('click', () => goToImage(currentIndex + 1));
+
+        // --- Lightbox ---
+
+        // Lightbox state
+      
+
+        // Inject lightbox DOM once
+        const lb = document.createElement('div');
+        lb.id = 'lightbox';
+        lb.className = 'lightbox-overlay';
+        lb.innerHTML = `
+            <div class="lightbox-inner">
+                <button class="lightbox-close" id="lb-close"><i class="fas fa-times"></i></button>
+                <button class="lightbox-nav lb-prev" id="lb-prev"><i class="fas fa-chevron-left"></i></button>
+                <img src="" alt="Full screen view" id="lb-img" class="lightbox-img">
+                <button class="lightbox-nav lb-next" id="lb-next"><i class="fas fa-chevron-right"></i></button>
+                <div class="lightbox-counter" id="lb-counter"></div>
+            </div>
+        `;
+        document.body.appendChild(lb);
+
+        const lbImg = document.getElementById('lb-img');
+        const lbCounter = document.getElementById('lb-counter');
+
+        function openLightbox(index) {
+            currentIndex = (index + images.length) % images.length;
+
+            lbImg.style.opacity = '1'; // add this fix
+            lbImg.src = images[currentIndex];
+
+            lbCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+            lb.classList.add('active');
+
+            document.body.style.overflow = 'hidden';
+            document.documentElement.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lb.classList.remove('active');
+
+            document.body.style.overflow = '';
+            document.documentElement.style.overflow = '';
+        }
+
+        function lbNavigate(dir) {
+            currentIndex = (currentIndex + dir + images.length) % images.length;
+            lbImg.style.opacity = '0';
+            setTimeout(() => {
+                lbImg.src = images[currentIndex];
+                lbCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+                lbImg.style.opacity = '1';
+                // Sync gallery thumbnails too
+                thumbs.forEach((t, i) => t.classList.toggle('active', i === currentIndex));
+                mainImg.src = images[currentIndex];
+            }, 150);
+        }
+
+        // Open on main image click
+        mainImg.addEventListener('click', () => openLightbox(currentIndex));
+        mainImg.style.cursor = 'zoom-in';
+
+        document.getElementById('lb-close').addEventListener('click', closeLightbox);
+        document.getElementById('lb-prev').addEventListener('click', (e) => { e.stopPropagation(); lbNavigate(-1); });
+        document.getElementById('lb-next').addEventListener('click', (e) => { e.stopPropagation(); lbNavigate(1); });
+
+        // Close on overlay click (outside image)
+        lb.addEventListener('click', (e) => {
+            if (e.target === lb) closeLightbox();
+        });
+
+        // Close on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (!lb.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') lbNavigate(-1);
+            if (e.key === 'ArrowRight') lbNavigate(1);
+        });
+
     } else {
         productContainer.innerHTML = `
             <div style="text-align: center; padding: 50px;">
